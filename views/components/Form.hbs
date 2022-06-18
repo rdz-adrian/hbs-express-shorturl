@@ -1,0 +1,11 @@
+{{#if url}}
+    <form action="/update/{{url.id}}" method="post">
+        <input value="{{url.origin}}" type="text" placeholder="Ingrese url" name="origin" class="form-control my-2">
+        <button class="btn btn-warning text-dark w-100 mb-2">Editar</button>
+    </form>
+    {{else}}
+    <form action="/" method="post">
+        <input type="text" placeholder="Ingrese url" name="origin" class="form-control my-2">
+        <button class="btn btn-primary w-100 mb-2">Agregar</button>
+    </form>
+{{/if}}

@@ -1,0 +1,9 @@
+<article class="card mb-2">
+  <div class="card-body">
+    <h3 style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">{{item.origin}}</h3>
+    <p>{{item.shortURL}}</p>
+    <a href="/delete/{{item.id}}" class="btn btn-danger"><i class="bi bi-trash-fill"></i> Eliminar</a>
+    <a href="/update/{{item.id}}" class="btn btn-secondary"><i class="bi bi-pencil-square"></i> Editar</a>
+    <button data-short="{{item.shortURL}}" class="btn btn-copy btn-primary"><i class="bi bi-clipboard"></i> Copiar</button>
+  </div>
+</article>
