@@ -1,0 +1,126 @@
+<div class='row justify-content-center mx-0 mt-5'>
+  <div class='col-12 col-md-10 col-lg-8'>
+    <div class='card shadow'>
+      <div class='row'>
+        <div
+          class='col-12 col-md-5 p-0 pt-4'
+          style='background-color: #F1F5FE; position: relative;'
+        >
+          <h1
+            style='position: absolute; font-weight: bold; left: 40px; top:10px'
+          >
+            Login
+          </h1>
+          {{! <lottie-player
+            src='https://assets1.lottiefiles.com/packages/lf20_jcikwtux.json'
+            background='transparent'
+            speed='1'
+            style='width: 100%; height: 400px;'
+            loop
+            autoplay
+          ></lottie-player> }}
+        </div>
+        <div
+          class='col-12 col-md-7 mt-5 mt-md-0 d-flex align-items-center justify-content-center'
+        >
+          <div class='row justify-content-center w-100 py-3'>
+            <div class='col-11'>
+              <form action='/auth/login' method='post'>
+                <input type='hidden' name='_csrf' value='{{csrfToken}}' />
+                <div>
+                  <label
+                    for='email'
+                    class='mb-2'
+                    style='font-weight: 600;'
+                  >Email</label>
+                  <div class='position-relative'>
+                    <input
+                      type='email'
+                      name='email'
+                      placeholder='Write your email'
+                      class='form-control w-100'
+                      style='border-radius: 20px; padding-left: 40px;'
+                      value='aracosta2810@gmail.com'
+                    />
+                    <i
+                      class='bi bi-envelope-fill'
+                      style='position: absolute; top:7px; left: 15px; color: rgb(110, 108, 108);'
+                    ></i>
+                  </div>
+
+                </div>
+                <div class='my-3'>
+                  <label
+                    for='password'
+                    style='font-weight: 600;'
+                  >Password</label>
+                  <div class='position-relative'>
+                    <input
+                      type='password'
+                      name='password'
+                      placeholder='Write your password'
+                      class='form-control w-100'
+                      style='border-radius: 20px; padding-left: 40px;'
+                      value='123123'
+                    />
+                    <i
+                      class='bi bi-lock-fill'
+                      style='position: absolute; top:5px; left: 15px; color: rgb(110, 108, 108);'
+                    ></i>
+                  </div>
+                </div>
+                <div class='d-flex' style='justify-content: space-between;'>
+                  <div class='form-check mb-3'>
+                    <input
+                      class='form-check-input'
+                      type='checkbox'
+                      value=''
+                      id='flexCheckChecked'
+                    />
+                    <label class='form-check-label' for='flexCheckChecked'>
+                      Remember me
+                    </label>
+                  </div>
+                  <a href='#'>Forgot Password?</a>
+                </div>
+                <div class='row mt-3'>
+                  <div class='col-6'>
+                    <button
+                      style='font-weight: 800; box-shadow: 6px 6px 10px rgba(0,0,0,0.3); align-items: center'
+                      class='btn btn-block border d-flex'
+                    >
+                      <img
+                        src='https://cdn.cdnlogo.com/logos/g/35/google-icon.svg'
+                        width='20x'
+                        class='mr-2'
+                      />
+                      Login with Google
+                    </button>
+                  </div> 
+                  <div class='col-6'>
+                    <button
+                      style='font-weight: 800; box-shadow: 6px 6px 10px rgba(0,0,0,0.3);'
+                      class='btn btn-primary h-100 btn-block'
+                      type='submit'
+                    >
+                      Login
+                    </button>
+                  </div>
+                  <div class='col-12 mt-5 text-center'>
+                    Don't have a account?
+                    <a href='/auth/register'>Sign in</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @import
+  url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+</style>

@@ -1,0 +1,79 @@
+{{!-- <div class="p-2 p-md-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Lorem, ipsum.</h1>
+        <p class="col-md-8 fs-4">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta sit modi dignissimos dolores dolor doloremque culpa vitae ullam accusantium adipisci odio corrupti pariatur optio soluta reiciendis quia blanditiis, enim ducimus.
+        </p>
+        <button class="btn btn-primary btn-lg" type="button">Go somewhere</button>
+    </div>
+</div>
+
+   {{> ADS}} --}}
+
+{{!-- Urls --}}
+<div class="w-100 contenedor text-white bg-primary mt-5">
+    <h3 class="mt-3 pl-5">Add a url</h3>
+    <nav class="navbar bg-primary px-5 pt-0" style="position: sticky; top: 0; z-index: 100;">
+        <div class="w-100">
+            {{> Form }}
+        </div>
+    </nav>
+    <div class="p-2">
+        {{#each urls}}
+            {{> RowUrls item = this}}
+        {{/each}}
+    </div>
+</div>
+
+
+<style>
+    .contenedor{
+        max-height: 500px; 
+        overflow-y: scroll;
+    }
+    .contenedor::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+
+    .contenedor::-webkit-scrollbar:vertical {
+        width:5px;
+        margin-right: 10px;
+    }
+
+    .contenedor::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+        display: none;
+    } 
+
+    .contenedor::-webkit-scrollbar:horizontal {
+        height: 10px;
+    }
+
+    .contenedor::-webkit-scrollbar-thumb {
+        background-color: #797979;
+        border-radius: 20px;
+    }
+
+    .contenedor::-webkit-scrollbar-track {
+        border-radius: 10px;  
+    }
+</style>
+
+{{!-- JS --}}
+<script>
+    const copyButtons = document.getElementsByClassName('btn-copy')
+
+    for (let i = 0; i < copyButtons.length; i++) {
+        copyButtons[i].addEventListener('click', (e) => {
+            const url = `http://localhost:5000/${e.target.dataset.short}`
+
+            copyButtons[i].innerHTML = '<i class="bi bi-clipboard-check text-success"></i> Copiar'
+
+            setTimeout(()=>{
+                copyButtons[i].innerHTML = '<i class="bi bi-clipboard text-white"></i> Copiar'
+            },3000)
+
+            navigator.clipboard.writeText(url)
+                .then(() => console.log('Text copied correctly'))
+                .catch((err) => console.log('Something went wrong ' + err))
+    })}
+</script>

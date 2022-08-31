@@ -1,11 +1,24 @@
-const router = require('express').Router()
-const { getUrls, createUrl, deleteUrl, getToUpdate, updateUrl, redirectTo } = require('../controllers/home.controller');
+const router = require('express').Router();
+const {
+  getUrls,
+  createUrl,
+  deleteUrl,
+  getToUpdate,
+  updateUrl,
+  redirectTo,
+} = require('../controllers/home.controller');
 const ulrValidar = require('../middlewares/urlValida');
+const { userValidation } = require('../middlewares/authValidator');
+const { getProfile } = require('../controllers/profile.controller');
 
-router.get('/', getUrls)
-router.post('/', ulrValidar, createUrl)
-router.get('/delete/:id', deleteUrl)
-router.get('/update/:id', getToUpdate)
-router.post('/update/:id', ulrValidar, updateUrl)
-router.get('/:shortURL', redirectTo)
+router.get('/', userValidation, getUrls);
+router.post('/', userValidation, ulrValidar, createUrl);
+router.get('/delete/:id', userValidation, deleteUrl);
+router.get('/update/:id', userValidation, getToUpdate);
+router.post('/update/:id', userValidation, ulrValidar, updateUrl);
+router.get('/profile', userValidation, getProfile)
+
+
+router.get('/:shortURL', redirectTo);
+
 module.exports = router;

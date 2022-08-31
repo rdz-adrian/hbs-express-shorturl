@@ -1,8 +1,7 @@
-require('dotenv').config()
-require('./app')
-require('./models/URL_Model')
-require('./models/User_Model')
+require('dotenv').config();
+require('./app');
+// require('./models/URL_Model');
+// require('./models/User_Model');
+const sequelize = require('./database/db');
 
-const sequelize = require('./database/db')
-// sequelize.sync({alter:true})
-
+// sequelize.sync({ alter: true })

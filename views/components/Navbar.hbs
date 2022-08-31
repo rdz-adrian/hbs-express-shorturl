@@ -1,25 +1,59 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="/">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"> 
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
+<nav class='navbar navbar-expand p-0 px-sm-2 navbar-light'>
+  <div class='container-fluid'>
+    <a
+      class='navbar-brand d-flex align-items-center'
+      style='font-weight: bold;'
+      href='/'
+    >
+      {{! <lottie-player
+        src="https://assets8.lottiefiles.com/packages/lf20_ZCjq5s.json"
+        background="transparent"
+        speed="1"
+        style="width: 50px; height: 50px;"
+        loop
+        autoplay
+      ></lottie-player> }}
+      Short Urls</a>
+    <div class='mr-4'>
+      <ul class='navbar-nav'>
+        <li class='nav-item'>
+          <a class='nav-link active p-0 pr-2 mx-2' aria-current='page' href='/'>
+            <i class='bi bi-house homeButton'></i>
+          </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/auth/login">LogIn</a>
+        <li class='nav-item'>
+          <a
+            class='nav-link active p-0 pr-2 mx-2'
+            aria-current='page'
+            href='/profile'
+            data-bs-toggle='tooltip'
+            data-bs-placement='bottom'
+            data-bs-title='Edit profile'
+          >
+            <i class='bi bi-person-circle homeButton'></i>
+          </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/auth/logout">LogOut</a>
+        <li class='nav-item'>
+          <a
+            class='nav-link active p-0 pr-2 mx-2'
+            aria-current='page'
+            href='/auth/logout'
+            data-bs-toggle='tooltip'
+            data-bs-placement='bottom'
+            data-bs-title='Log out'
+          >
+            <i class='bi bi-box-arrow-right homeButton'></i>
+          </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/auth/logup">LogUp</a>
-        </li>
-        
+        {{! <li class="nav-item">
+          <a class="nav-link" href="/auth/logout">Log out</a>
+        </li> }}
       </ul>
     </div>
   </div>
 </nav>
+
+<style>
+  .homeButton{ font-size: 1.5rem; transition: all .1s; } .homeButton:hover{
+  color: rgb(0, 153, 255); }
+</style>

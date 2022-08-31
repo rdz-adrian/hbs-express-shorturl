@@ -1,11 +1,28 @@
 {{#if url}}
-    <form action="/update/{{url.id}}" method="post">
-        <input value="{{url.origin}}" type="text" placeholder="Ingrese url" name="origin" class="form-control my-2">
-        <button class="btn btn-warning text-dark w-100 mb-2">Editar</button>
-    </form>
-    {{else}}
-    <form action="/" method="post">
-        <input type="text" placeholder="Ingrese url" name="origin" class="form-control my-2">
-        <button class="btn btn-primary w-100 mb-2">Agregar</button>
-    </form>
+  <form action='/update/{{url.id}}' method='post'>
+    <input type='hidden' name='_csrf' value='{{csrfToken}}' />
+    <input
+      value='{{url.origin}}'
+      type='text'
+      placeholder='Ingrese url'
+      name='origin'
+      class='form-control my-2'
+    />
+    <button class='btn btn-warning text-dark w-100 mb-2'>Update</button>
+  </form>
+{{else}}
+  <form class='row align-items-center' action='/' method='post'>
+    <input type='hidden' name='_csrf' value='{{csrfToken}}' />
+    <div class='col-9 col-md-10 p-0 pr-2'>
+      <input
+        type='text'
+        placeholder='Ingrese url'
+        name='origin'
+        class='form-control my-2 text-primary'
+      />
+    </div>
+    <div class='col-3 col-md-2 p-0'>
+      <button class='btn btn-info w-100'>Add</button>
+    </div>
+  </form>
 {{/if}}
