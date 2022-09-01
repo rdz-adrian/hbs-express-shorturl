@@ -1,0 +1,46 @@
+#container{
+    background-color: burlywood;
+    display: flex;
+    justify-content: center;
+}
+
+.size{
+    background-color: cornflowerblue;
+    width: 300px;
+    height: 400px;
+    float: left;
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.but{
+    background-color: #007272;
+}
+.circle{
+    position: absolute;
+    width: 100%;
+    height: 85%;
+    background-color: #007272;
+    top: -50%;
+    border-radius: 100%;
+}
+.personal_info{
+    position: absolute;
+    margin-top: 150px;
+}
+
+.photo_frame{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 300px;
+}
+
+#image_settings{
+    width: 150px;
+    height: 150px;
+    margin-top: 10px;
+    border-radius: 100%;
+    border: 10% solid white ;
+}
