@@ -1,0 +1,65 @@
+/* cards container */
+#container {
+  background-color: #efeeef;
+  display: flex;
+  justify-content: center;
+}
+/* carts box size and other properties */
+.size {
+  background-color: white;
+  width: 300px;
+  height: 400px;
+  float: left;
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+/* button characteristics */
+.but {
+    background-color: #007272;
+    font-size: 0.5cm;
+    color: white;
+    border-radius: 5px;
+}
+.but_position {
+    position: absolute;
+    margin-top: 320px;
+    width: 300px;
+}
+.line_colors{
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 0%;
+    margin-bottom: 10px;
+}
+/* end button */
+/* half cicle color and positions */
+.circle {
+  position: absolute;
+  width: 100%;
+  height: 85%;
+  background-color: #007272;
+  top: -50%;
+  border-radius: 100%;
+}
+/* text containing all information */
+.personal_info {
+  position: absolute;
+  margin-top: 150px;
+}
+/* image characteristics */
+.photo_frame {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 300px;
+}
+.image_settings {
+  width: 150px;
+  height: 150px;
+  margin-top: 10px;
+  border-radius: 100%;
+  border: 50% solid white;
+}
+/* end image */
