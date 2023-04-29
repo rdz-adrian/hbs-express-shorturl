@@ -88,6 +88,10 @@ const redirectTo = async (req, res) => {
   }
 };
 
+const getProfile = (req, res) => {
+  res.render('pages/profile', { user: req.user });
+}
+
 module.exports = {
   getUrls,
   createUrl,
@@ -95,4 +99,5 @@ module.exports = {
   getToUpdate,
   updateUrl,
   redirectTo,
+  getProfile
 };
